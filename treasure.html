@@ -112,6 +112,66 @@
         </div> 
 
     </div>
+
+    <script>
+        var ids = ["img0", "img1", "img2", "img3", "img4", "img5", "img6", "img7", "img8", "img9", "img10", "img11", "img12", "img13", "img14", "img15", "img16", "img17", "img18", "img19", "img20", "img21", "img22", "img23", "img24"]
+        var chestCount = 0
+        var score = 0
+        var lastCheck = 12
+        var treasureLocation = 18
+        function check(position) {
+            image = document.getElementById(ids[position])
+            if (position == treasureLocation) {
+                image.src = "treasure-chest.jpg"
+            }
+            else {
+                image.src = "treasure empty chest.jpg"
+            }
+            chestCount = chestCount + 1
+            score = score + 1
+            document.getElementById("chests").innerHTML = "Number of chests checked is " + chestCount
+            document.getElementById("score").innerHTML = "Score is  " + score
+            lastCheck = position
+        }
+
+        function help() {
+           let lastCheckrow =parseInt(lastCheck / 5)
+            let lastCheckcol = parseInt(lastCheck % 5)
+            let treasureLocationrow =parseInt (treasureLocation/5)
+            let treasureLocationcol =parseInt(treasureLocation%5)
+            score = score + 2
+            console.log(treasureLocation,treasureLocationcol,treasureLocationrow,lastCheckcol,lastCheckrow)
+            document.getElementById("score").innerHTML = "Score is" + score
+            if(lastCheck==treasureLocation){
+                document.getElementById("help").innerHTML = "sorry, no help available"
+            }
+            if (lastCheckrow == treasureLocationrow) {
+                if (lastCheckcol < treasureLocationcol) {
+                    document.getElementById("help").innerHTML = "left"
+                }
+                else if(lastCheckcol > treasureLocationcol) {
+                    document.getElementById("help").innerHTML = "right"
+                }
+
+
+            }
+            else if (lastCheckcol == treasureLocationcol) {
+                if (lastCheckrow < treasureLocationrow) {
+                    document.getElementById("help").innerHTML = "Down"
+                }
+                else if (lastCheckrow > treasureLocationrow) {
+                    document.getElementById("help").innerHTML = "Up"
+                }
+
+            }
+            else {
+                document.getElementById("help").innerHTML = "sorry, no help available"
+            }
+
+        }
+    </script>
 </body>
 
 </html>
+
+
