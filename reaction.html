@@ -32,17 +32,15 @@
             <button class="btn btn-danger" type="submit" onclick="recordReact()">React Now</button>
         </div>
     </div>
-    <!-- Part 5: Use setTimeout to create a reaction game.  You will press a button to start a countdown. -->
-    <script>
+   
+  <script>
         var myTime = Date.now()
         function recordReact() {
             myTime = Date.now()
             console.log(myTime)
         }
     </script>
-
-    <!--Part 6: Add in the code to handle the count down and check against the time the reaction button was pressed. -->
-    <script>
+   <script>
         function startTime() {
             // BONUS
             let countdown = Math.floor(Math.random() * 9) + 2

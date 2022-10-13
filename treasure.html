@@ -14,7 +14,6 @@
 
 </head>
 <body>
-<!--Part 2: Create basic HTML structure -->
 <div class="container" style="text-align:center">
     <div class="container-fluid p-5 bg-success text-warning text-center">
         <h1>Treasure Hunt By Amrutha varshini koduri</h1>
@@ -26,7 +25,11 @@
         <div class="p-2 bg-danger flex-fill" id="help">Help report</div>
     </div>
 </div>
-<!-- Part 3: The goal is to have a 5 by 5 display of images.-->
+<br>
+<div class="container text-center" >
+    <button class="btn btn-success" type ="submit" onclick="resetGame()">Reset</button> 
+</div>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-sm">
@@ -124,7 +127,7 @@
 </div>
 </div>
 <br>
-<!--Part 4: Making the game operational. -->
+
 <script>
     const ids = ["chest0", "chest1", "chest2", "chest3", "chest4", "chest5", "chest6", "chest7",
     "chest8", "chest9", "chest10", "chest11", "help", "chest13", "chest14", "chest15", "chest16",
@@ -188,7 +191,7 @@
         document.getElementById("help").innerHTML = "Help report"
         for(let i = 0; i < 24; i++) {
             if(i != 12) {
-                document.getElementById(ids[i]).src = "Treasure Chest.jpg"
+                document.getElementById(ids[i]).src = "Treasureclose.jpg"
             }
         }
     }
